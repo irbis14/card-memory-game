@@ -18,7 +18,7 @@ export class GameScene extends Scene {
     super('GameScene');
   }
 
-  create() {
+  async create() {
     // How to add one card
 
     // 1) const card = this.add.sprite(250, 400, 'card');
@@ -26,7 +26,8 @@ export class GameScene extends Scene {
     // 2) const card = new Card(this, { x: 250, y: 300, id: '2' });
 
     this.cardDealer = new CardDealer(this);
-    this.cardDealer.createCards();
+
+    await this.cardDealer.createCards();
 
     this.initEvents(); // subscribe on Events
   }
